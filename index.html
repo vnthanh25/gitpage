@@ -1,36 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html manifest="appcache.manifest">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Offline Map example in web browser</title>
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link type="text/css" rel="stylesheet" href="leaflet.css" />
+</head>
 <body>
-
-<p>Click the button to get your coordinates.</p>
-
-<button onclick="getLocation()">Try It</button>
-
-<p id="demo"></p>
-
-<script>
-var x = document.getElementById("demo");
-
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-
-function showPosition(position) {
-    var info = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude + 
-    "<br>accuracy: " + position.coords.accuracy + 
-    "<br>altitude: " + position.coords.altitude + 
-    "<br>altitudeAccuracy: " + position.coords.altitudeAccuracy + 
-    "<br>heading: " + position.coords.heading + 
-    "<br>speed: " + position.coords.speed;
-    alert(info);
-    x.innerHTML = info;
-}
-</script>
-
+    <div id="map"></div>
+    <script src="leaflet.js"></script>
+    <script src="event.js"></script>
+    <script src="storage.js"></script>
+    <script src="map.js"></script>
+    <script src="run.js"></script>
 </body>
 </html>
