@@ -56,7 +56,7 @@
     });
 
     emr.on('mapLoad', function (storage) {
-        var map = L.map('map').setView([53.902254, 27.561850], 13);
+        var map = L.map('map').setView([10.7809315, 106.6631108], 13);
         new StorageTileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {storage: storage}).addTo(map);
         emr.fire('mapLoaded');
     });
